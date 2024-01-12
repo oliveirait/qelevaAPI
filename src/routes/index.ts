@@ -1,9 +1,7 @@
 import { Router } from 'express';
-import { CreateNewQuestion } from '../controllers/questions/createQuestion';
-
+import { Questions } from '../controllers/questions';
 export const router = Router()
-const questions = new CreateNewQuestion()
 
 
-
-router.post("/questions", questions.handle)
+router.get("/questions", Questions.read.handle )
+router.post("/questions", Questions.create.handle)

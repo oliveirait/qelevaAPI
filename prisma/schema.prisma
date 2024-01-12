@@ -22,9 +22,12 @@ model Questions {
   resp            String // 
   area            String
   difficulty      String // Facil, Medio, Dificil
+  materia         String // Portugues
+  ano             String // 2022
+  cargo           String // TÉCNICO JUDICIÁRIO - APOIO ESPECIALIZADO TECNOLOGIA DA INFORMAÇÃO
+  nivel           String // Superior / Medio
   created_at      DateTime @default(now())
   updated_at      DateTime @updatedAt
-  materia         String // Portugues
 
   @@map("questions")
 }
