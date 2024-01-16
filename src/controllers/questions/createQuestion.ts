@@ -4,15 +4,15 @@ import { QuestionsProps } from "../../@types/questions"
 
 export class CreateNewQuestion {
     async handle (req: Request, res: Response) {
-      console.log("Conectando")
       const { 
           enun,
           a1, a2, a3, a4, a5,
           resp,
           area,
           materia,
-          difficulty,
-          ano, nivel, cargo
+          ano, 
+          nivel, 
+          cargo
         } = req.body satisfies QuestionsProps
 
       try {
@@ -23,8 +23,9 @@ export class CreateNewQuestion {
             resp,
             area,
             materia,
-            difficulty,
-            ano, nivel, cargo
+            ano, 
+            nivel,
+            cargo
           }
         })
         return res.json({

@@ -5,15 +5,13 @@ import { db } from "../../database/prismaConnect"
 
 export class Simulator {
   async handle (req: Request, res: Response) {
-    const { quantidade, area, materia, 
-      difficulty, ano, nivel }: any = req.body
+    const { quantidade, area, materia, ano, nivel }: any = req.body
 
     const qtd = parseInt(quantidade)
 
     try {
       const simulator = await db.questions.findMany({
         where: {
-          difficulty: difficulty,
           nivel: nivel,
           ano: ano,
           materia: materia,

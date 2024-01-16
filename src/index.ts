@@ -7,15 +7,16 @@ const cors = require('cors')
 const app = express()
 const port = 3333
 
+
 app.use(express.json(), cors(), router)
 
 
 app.get("/", (req: Request, res: Response) => {
-    res.json({
-        status: 0,
-        retorno: [],
-        erro: ""
-    })
+  res.json({
+      status: 0,
+      retorno: [],
+      erro: ""
+  })
 })
 
 
