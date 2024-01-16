@@ -9,4 +9,7 @@ export interface QuestionsProps {
   area: string
   materia: string
   difficulty: string
+  ano: string
+  nivel: string
+  cargo: string
 }

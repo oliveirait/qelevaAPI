@@ -10,7 +10,10 @@ CREATE TABLE "questions" (
     "resp" TEXT NOT NULL,
     "area" TEXT NOT NULL,
     "difficulty" TEXT NOT NULL,
+    "materia" TEXT NOT NULL,
+    "ano" TEXT NOT NULL,
+    "cargo" TEXT NOT NULL,
+    "nivel" TEXT NOT NULL,
     "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" DATETIME NOT NULL,
-    "materia" TEXT NOT NULL
+    "updated_at" DATETIME NOT NULL
 );

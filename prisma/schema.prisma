@@ -14,12 +14,12 @@ datasource db {
 model Questions {
   id              String @id @default(uuid())
   enun            String 
-  a1              String
+  a1              String 
   a2              String
   a3              String
   a4              String
   a5              String             
-  resp            String // 
+  resp            String 
   area            String
   difficulty      String // Facil, Medio, Dificil
   materia         String // Portugues
@@ -27,9 +27,7 @@ model Questions {
   cargo           String // TÉCNICO JUDICIÁRIO - APOIO ESPECIALIZADO TECNOLOGIA DA INFORMAÇÃO
   nivel           String // Superior / Medio
   created_at      DateTime @default(now())
-  updated_at      DateTime @updatedAt
+  updated_at      DateTime @updatedAt 
 
   @@map("questions")
 }
-
-

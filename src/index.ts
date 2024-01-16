@@ -13,12 +13,12 @@ app.use(express.json(), cors(), router)
 app.get("/", (req: Request, res: Response) => {
     res.json({
         status: 0,
-        retorno: [""],
+        retorno: [],
         erro: ""
     })
 })
 
 
 app.listen(port, () => {
-    console.log(`App is Running on port ${port}`)
+    console.log(`App is Running on http://localhost:${port}`)
 })
