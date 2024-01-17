@@ -21,7 +21,6 @@ model Questions {
   a5              String             
   resp            String 
   area            String
-  //difficulty    String // Facil, Medio, Dificil
   materia         String // Portugues
   ano             String // 2022
   cargo           String // TÉCNICO JUDICIÁRIO - APOIO ESPECIALIZADO TECNOLOGIA DA INFORMAÇÃO

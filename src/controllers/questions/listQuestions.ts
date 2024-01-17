@@ -13,11 +13,11 @@ export class ListQuestions {
       })
     }
 
-    catch {
+    catch (e) {
       return res.status(500).json({
         status: 1,
         retorno: [],
-        erro: "Falha a buscar lista"
+        erro: e
       })
     }
 

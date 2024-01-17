@@ -4,29 +4,9 @@ import { QuestionsProps } from "../../@types/questions"
 
 export class CreateNewQuestion {
     async handle (req: Request, res: Response) {
-      const { 
-          enun,
-          a1, a2, a3, a4, a5,
-          resp,
-          area,
-          materia,
-          ano, 
-          nivel, 
-          cargo
-        } = req.body satisfies QuestionsProps
-
       try {
         const questions = await db.questions.create({
-          data: {
-            enun,
-            a1, a2, a3, a4, a5,
-            resp,
-            area,
-            materia,
-            ano, 
-            nivel,
-            cargo
-          }
+          data: req.body satisfies QuestionsProps
         })
         return res.json({
           status: 0,
@@ -44,7 +24,7 @@ export class CreateNewQuestion {
       }
 
       finally {
-        console.log("Desconectando")
+        console.log(new Date())
         await db.$disconnect()
       }
     }
