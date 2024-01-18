@@ -11,4 +11,5 @@ export interface QuestionsProps {
   ano: string
   nivel: string
   cargo: string
+  nome_prova: string
 }

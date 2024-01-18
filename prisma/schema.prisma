@@ -25,6 +25,7 @@ model Questions {
   ano             String // 2022
   cargo           String // TÉCNICO JUDICIÁRIO - APOIO ESPECIALIZADO TECNOLOGIA DA INFORMAÇÃO
   nivel           String // Superior / Medio
+  nomeprova       String // TRT
   created_at      DateTime @default(now())
   updated_at      DateTime @updatedAt 
 

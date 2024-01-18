@@ -3,7 +3,7 @@ import {Request, Response} from 'express'
 import { db } from '../../database/prismaConnect'
 
 export class ListQuestions {
-  async handle (req:Request, res:Response) {
+  async handle (req: Request, res: Response) {
     try {
       const questions = await db.questions.findMany()
       return res.json({
