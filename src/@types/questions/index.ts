@@ -11,5 +11,17 @@ export interface QuestionsProps {
   ano: string
   nivel: string
   cargo: string
-  nome_prova: string
+  nomeprova: string
+}
+
+export interface QuestionsPropsV2 {
+  enun: string
+  questions: string
+  resp: string
+  area: string
+  materia: string
+  ano: string
+  nivel: string
+  cargo: string
+  nomeprova: string
 }
