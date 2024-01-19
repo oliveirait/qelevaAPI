@@ -13,7 +13,7 @@ datasource db {
 
 model Questions {
   id              String @id @default(uuid())
-  enun            String 
+  enun            String @unique
   a1              String 
   a2              String
   a3              String
