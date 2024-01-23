@@ -5,17 +5,25 @@ import { db } from "../../database/prismaConnect"
 
 export class RandomSimulator {
   async handle (req: Request, res: Response) {
-    const { quantidade, area, materia, ano, nivel }: any = req.body
+    const { quantidade, area, materia, ano, nivel, banca } = req.body
 
-    const qtd = parseInt(quantidade)
+    const isEmpty = [quantidade, area, materia, ano, nivel, banca].includes('')
+
+    if (isEmpty) {
+      return res.json({
+        status: 4,
+        retorno: [],
+        erro: "Campos inválidos ou faltando"
+      })
+    }
 
     try {
       const randomSimulator = await db.$queryRaw`
         SELECT *
         FROM questions
-        WHERE nivel=${nivel} and ano=${ano} and materia=${materia} and area=${area}
+        WHERE nivel=${nivel} and ano=${ano} and materia=${materia} and area=${area} and banca=${banca}
         ORDER BY RANDOM()
-        LIMIT ${qtd}
+        LIMIT ${parseInt(quantidade)}
       `;
 
       return res.json({
@@ -37,7 +45,5 @@ export class RandomSimulator {
       console.log("Desconectando")
       await db.$disconnect()
     }
-
-
   }
 }

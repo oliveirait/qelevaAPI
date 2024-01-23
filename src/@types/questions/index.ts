@@ -12,6 +12,7 @@ export interface QuestionsProps {
   nivel: string
   cargo: string
   nomeprova: string
+  banca: string
 }
 
 export interface QuestionsPropsV2 {
@@ -24,4 +25,5 @@ export interface QuestionsPropsV2 {
   nivel: string
   cargo: string
   nomeprova: string
+  banca: string
 }
