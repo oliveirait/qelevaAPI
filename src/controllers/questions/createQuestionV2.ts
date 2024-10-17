@@ -2,6 +2,7 @@ import { Request, Response } from "express"
 import { db } from "../../database/prismaConnect"
 import { QuestionsProps } from "../../@types/questions"
 import { Prisma } from "@prisma/client"
+import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library"
 
 export class CreateNewQuestionV2 {
   async handle (req: Request, res: Response) {
@@ -27,7 +28,7 @@ export class CreateNewQuestionV2 {
     }
 
     catch (e) {
-      if (e instanceof Prisma.PrismaClientKnownRequestError) {
+      if (e instanceof PrismaClientKnownRequestError) {
         if (e.code === 'P2002') {
           return res.json({
             status: 3,
@@ -36,11 +37,11 @@ export class CreateNewQuestionV2 {
           })
         }
       }
-      console.log('Campo vazio', req.body)
+      console.log('Erro no banco ->\n\n', req.body)
       return res.json({
         status: 2,
         retorno: [],
-        erro: "Parametros faltando"
+        erro: JSON.stringify(e)
       })
 
     }
